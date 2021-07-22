@@ -1,0 +1,32 @@
+{
+  "name": "wrs-bmkg",
+  "version": "1.0.0",
+  "description": "Wrapper tidak resmi yang digunakan untuk mendapatkan informasi gempa dari WRS-BMKG ",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yonle/wrs-bmkg.js.git"
+  },
+  "keywords": [
+    "bmkg",
+    "wrs",
+    "warning-receiver-system",
+    "wrs-bmkg",
+    "wrs-ntwc",
+    "ntwc",
+    "inatews-bmkg",
+    "indonesia"
+  ],
+  "author": "Yonle <yonle@protonmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Yonle/wrs-bmkg.js/issues"
+  },
+  "homepage": "https://github.com/Yonle/wrs-bmkg.js#readme",
+  "dependencies": {
+    "miniget": "^4.2.1"
+  }
+}
