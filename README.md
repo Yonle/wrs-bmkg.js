@@ -35,7 +35,7 @@ Event yang biasanya digunakan untuk menangkap error saat request ke WRS-BMKG.
 Event lainnya yang biasanya tidak ada di list ini biasanya direspon dari endpoint WRS-BMKG.
 
 ### await wrs.gempaQL()
-Function yang digunakan untuk mendapatkan histori gempa. Returns `Array`.
+Function yang digunakan untuk mendapatkan histori gempa. Return `Array`.
 
 ### wrs.lastAlert
 Informasi Alert sebelumnya.
@@ -43,8 +43,11 @@ Informasi Alert sebelumnya.
 ### wrs.lastRealtimeQL
 Informasi Gempa bumi realtime sebelumnya.
 
-### wrs.startPolling
+### wrs.startPolling(timeout)
 Mulai Polling.
+
+#### Parameter
+- `timeout` (Number): Nomor untuk mengecek ulang setiap milidetik. Secara default, wrs-bmkg.js mengecek setiap 10 detik.
 
 ### wrs.stopPolling
 Berhenti Polling.

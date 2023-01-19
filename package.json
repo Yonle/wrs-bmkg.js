@@ -1,6 +1,6 @@
 {
   "name": "wrs-bmkg",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Wrapper tidak resmi yang digunakan untuk mendapatkan informasi gempa dari WRS-BMKG ",
   "main": "index.js",
   "scripts": {
@@ -20,8 +20,8 @@
     "inatews-bmkg",
     "indonesia"
   ],
-  "author": "Yonle <yonle@protonmail.com>",
-  "license": "MIT",
+  "author": "Yonle <yonle@lecturify.net>",
+  "license": "BSD-3-Clause",
   "bugs": {
     "url": "https://github.com/Yonle/wrs-bmkg.js/issues"
   },

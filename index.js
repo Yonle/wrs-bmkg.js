@@ -13,7 +13,7 @@ module.exports = function newListener(apiURL = "https://bmkg-content-inatews.sto
 	let stop = false;
 	event.lastAlert = null;
 	event.lastRealtimeQL = null;
-	function get() {
+	function get(t) {
 		if (stop) return;
 		miniget(apiURL, { path: `/datagempa.json?t=${Date.now()}` }).text().then(body => {
 			let msg = JSON.parse(body);
@@ -23,7 +23,7 @@ module.exports = function newListener(apiURL = "https://bmkg-content-inatews.sto
 			event.lastAlert = msg;
 			event.emit(msg.info.event, msg.info);
 			// Then do a polling after request finished.
-			get();
+			setTimeout(_ => get(t), t);
 		}).catch(err => event.emit('error', err));
 
 		miniget(apiURL, { path: `/lastQL.json?t=${Date.now()}` }).text().then(body => {
@@ -46,9 +46,9 @@ module.exports = function newListener(apiURL = "https://bmkg-content-inatews.sto
 		});
 	}
 	
-	event.startPolling = _ => {
+	event.startPolling = timeout => {
 		stop = false;
-		get();
+		get(timeout || 10000);
 	}
 	event.stopPolling = _ => stop = true;
 	return event;
